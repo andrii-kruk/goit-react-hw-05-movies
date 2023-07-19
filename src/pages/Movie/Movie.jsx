@@ -12,7 +12,7 @@ const Movie = () => {
       setMovie(movieData);
     };
     getMovie();
-  }, []);
+  }, [movieId]);
 
   if (!movie || !movie.title || !movie.backdrop_path) {
     return <div>Loading...</div>;

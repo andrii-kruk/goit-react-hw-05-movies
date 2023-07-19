@@ -13,7 +13,7 @@ const Reviews = () => {
     };
 
     getMovieData();
-  }, []);
+  }, [movieId]);
 
   if (reviews.length === 0) {
     return <div>There isn't reviews</div>;

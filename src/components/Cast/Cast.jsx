@@ -12,7 +12,7 @@ const Cast = () => {
       setCrew(movieData);
     };
     getMovie();
-  }, []);
+  }, [movieId]);
 
   return (
     <div>
