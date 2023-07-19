@@ -1,5 +1,5 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Routes, Route, useParams } from 'react-router-dom';
 
 import HomePage from 'pages/HomePage/HomePage';
 import MoviesPage from 'pages/MoviesPage/MoviesPage';
@@ -16,7 +16,7 @@ const App = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="movies" element={<MoviesPage />} />
-          <Route path="movie" element={<Movie />}>
+          <Route path="movie/:movieId" element={<Movie />}>
             <Route path="cast" element={<Cast />} />
             <Route path="reviews" element={<Reviews />} />
           </Route>
