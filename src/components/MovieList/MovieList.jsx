@@ -1,4 +1,6 @@
-import MovieItem from './MovieItem/MovieItem';
+import { lazy } from 'react';
+
+const MovieItem = lazy(() => import('./MovieItem/MovieItem'));
 import { StyledList } from './MovieList.styled';
 
 const MovieList = ({ movies, state }) => {
