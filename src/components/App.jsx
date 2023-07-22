@@ -11,7 +11,7 @@ const Cast = lazy(() => import('../components/Cast/Cast'));
 const App = () => {
   return (
     <div>
-      <Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
         <Routes basename="/chodgi71/goit-react-hw-05-movies">
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
