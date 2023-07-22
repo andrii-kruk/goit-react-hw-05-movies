@@ -12,7 +12,7 @@ const App = () => {
   return (
     <div>
       <Suspense fallback={<div>Loading...</div>}>
-        <Routes basename="/goit-react-hw-05-movies">
+        <Routes >
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
             <Route path="movies" element={<MoviesPage />} />
