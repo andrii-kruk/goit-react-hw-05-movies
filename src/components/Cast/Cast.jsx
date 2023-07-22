@@ -1,6 +1,8 @@
 import { getMovieById } from 'components/services/api';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { StyledItem, StyledList, StyledTitle } from './Cast.styled';
+import Container from 'components/Container/Container';
 
 const Cast = () => {
   const [crew, setCrew] = useState([]);
@@ -12,21 +14,23 @@ const Cast = () => {
       setCrew(movieData);
     };
     getMovie();
-  }, []);
+  }, [movieId]);
 
   return (
-    <div>
-      <h3>Cast:</h3>
-      {crew.cast?.map(actor => (
-        <div key={actor.id}>
-          <img
-            src={`https://image.tmdb.org/t/p/w300${actor?.profile_path}`}
-            alt={actor.name}
-          />
-          <h3>{actor.name}</h3>
-        </div>
-      ))}
-    </div>
+    <Container>
+      <StyledTitle>Cast:</StyledTitle>
+      <StyledList>
+        {crew.cast?.map(actor => (
+          <StyledItem key={actor.id}>
+            <img
+              src={`https://image.tmdb.org/t/p/w300${actor?.profile_path}`}
+              alt={actor.name}
+            />
+            <StyledTitle>{actor.name}</StyledTitle>
+          </StyledItem>
+        ))}
+      </StyledList>
+    </Container>
   );
 };
 

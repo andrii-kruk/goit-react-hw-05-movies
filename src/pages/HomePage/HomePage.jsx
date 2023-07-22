@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getWeeklyTrends } from 'components/services/api';
 import MovieList from 'components/MovieList/MovieList';
+import Container from 'components/Container/Container';
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
@@ -13,11 +14,7 @@ const HomePage = () => {
 
     getMovies();
   }, []);
-  return (
-    <div>
-      <MovieList movies={movies} />
-    </div>
-  );
+  return <Container children={<MovieList movies={movies} />} />;
 };
 
 export default HomePage;

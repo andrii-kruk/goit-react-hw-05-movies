@@ -1,12 +1,12 @@
 import MovieItem from './MovieItem/MovieItem';
+import { StyledList } from './MovieList.styled';
 
-const MovieList = ({ movies }) => {
+const MovieList = ({ movies, state }) => {
   return (
     <>
-      <h1>Daily Trends</h1>
-      <ul>
-        <MovieItem movies={movies} />
-      </ul>
+      <StyledList>
+        <MovieItem movies={movies} state={state} />
+      </StyledList>
     </>
   );
 };

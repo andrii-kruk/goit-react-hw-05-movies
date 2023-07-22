@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieById } from 'components/services/api';
+import Container from 'components/Container/Container';
+import { StyledItem, StyledList } from './Reviews.styled';
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
@@ -13,21 +15,23 @@ const Reviews = () => {
     };
 
     getMovieData();
-  }, []);
+  }, [movieId]);
 
   if (reviews.length === 0) {
     return <div>There isn't reviews</div>;
   }
 
   return (
-    <ul>
-      {reviews.map(review => (
-        <li key={review.id}>
-          <h3>{review.author}</h3>
-          <p>{review.content}</p>
-        </li>
-      ))}
-    </ul>
+    <Container>
+      <StyledList>
+        {reviews.map(review => (
+          <StyledItem key={review.id}>
+            <h3>{review.author}</h3>
+            <p>{review.content}</p>
+          </StyledItem>
+        ))}
+      </StyledList>
+    </Container>
   );
 };
 
