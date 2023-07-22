@@ -1,7 +1,7 @@
 import { lazy } from 'react';
+import { StyledList } from './MovieList.styled';
 
 const MovieItem = lazy(() => import('./MovieItem/MovieItem'));
-import { StyledList } from './MovieList.styled';
 
 const MovieList = ({ movies, state }) => {
   return (
